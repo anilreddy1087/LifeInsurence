@@ -1,0 +1,44 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" 
+    data-sly-call="${clientlib.all @ categories='newsportal.user'}"/>
+
+
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form name="resistar" id="Register">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">UserId</span>
+            <input type="text" placeholder="Enter your userId" name="userId" id="userid" required>
+          </div>
+          <div class="input-box">
+            <span class="details">FirstName</span>
+            <input type="text" placeholder="Enter your FirstName" name="firstName" id="firstname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">LastName</span>
+            <input type="text" placeholder="Enter your LastName" name="lastName" id="lastname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Age</span>
+            <input type="text" placeholder="Enter your Age" name="age" id="age" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your Email" name="email" id="email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">PhoneNumber</span>
+            <input type="text" placeholder="Enter your PhNumber" name="PhNumber" id="phnumber" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your Password" name="password" id="password" required>
+          </div>
+        </div>
+        <div class="button">
+          <input  type="submit" value="submmit" name="button" id="submit">
+        </div>
+      </form>
+    </div>
+  </div>
