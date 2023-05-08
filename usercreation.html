@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="usercreation.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="#" name="resistar" id="Register">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">UserId</span>
+            <input type="text" placeholder="Enter your userId" name="userId" id="userid" required>
+          </div>
+          <div class="input-box">
+            <span class="details">FirstName</span>
+            <input type="text" placeholder="Enter your FirstName" name="firstName" id="firstname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">LastName</span>
+            <input type="text" placeholder="Enter your LastName" name="lastName" id="lastname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Age</span>
+            <input type="text" placeholder="Enter your Age" name="age" id="age" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your Email" name="email" id="email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">PhoneNumber</span>
+            <input type="text" placeholder="Enter your PhNumber" name="PhNumber" id="phnumber" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your Password" name="password" id="password" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="submmit" name="button" id="button">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+        $("#Register").click(function(e){
+            e.preventDefault();
+            var userId = $("#userid").val();
+            var firstName = $("#firstname").val();
+            var lastName = $("#lastname").val();
+            var age = $("#age").val();
+            var email = $("#email").val();
+            var phNumber = $("#phnumber").val();
+            var password = $("#password").val();
+            var userJson = JSON.stringify(details);
+            alert(userJson);
+            console.log(userJson);        
+            $.ajax({
+                url: "http://localhost:4502/bin/newsportal/service/user-create",
+                type: "POST",
+                contentType: "application/json",
+                data: {
+                      "userId": anil2021,
+                      "firstName": "Anil",
+                      "lastName": "Chagani",
+                      "age": 25,
+                      "PhNumber": 8179272565,
+                      "password": "Anil@100"
+                   },
+              
+                error: function(message) {
+                    console.log(message);
+                },
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        }); 
+    });
+     </script>\
+    $(document).ready(function() {
+      $("#usercreation").button(function(event){
+          alert("submitted");
+          event.preventDefault();
+          var userId = $("#userid").val();
+          console.log("user id : " + userId);
+          var firstName = $("#firstname").val();
+          console.log("firstname  : " + firstName);
+          var lastName = $("#lastname").val();
+          console.log("lastname : " + lastName);
+          var age = $("#age").val();
+          console.log("age : " + age);
+          var email = $("#email").val();
+          console.log("email : " + email);
+          var phNumber = $("#phnumber").val();
+          console.log("phnumber : " + phNumber);
+          var password = $("#password").val();
+          console.log("password : " + password);
+
+           var formData = $(this).serialize();
+
+          $.ajax({
+              type: "POST",
+              url: "bin/newsportal/service/user-create",
+              contentType: "application/json",
+              data: {
+                    "userid": userId,
+                    "firstname": firstName,
+                    "lastname": lastName,
+                    "age": age,
+                    "email":email,
+                    "phnumber": phNumber,
+                    "password": password
+                 },
+            
+              error: function(error) {
+                  console.log("Error sending data : " +error);
+              },
+              success: function(response) {
+                  console.log(data);
+              }
+          });
+      });
+   }); 
+
+</body>
+</html>
